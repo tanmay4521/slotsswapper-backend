@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "slotsswapper.netlify.app")
+@CrossOrigin(origins = "https://slotsswapper.netlify.app")
 public class SwapController {
 
     private final SwapService swapService;

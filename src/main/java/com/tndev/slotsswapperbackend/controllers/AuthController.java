@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "slotsswapper.netlify.app")
+@CrossOrigin(origins = "https://slotsswapper.netlify.app")
 public class AuthController {
 
     private final UserRepository userRepository;

@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "slotsswapper.netlify.app")
+@CrossOrigin(origins = "https://slotsswapper.netlify.app")
 @RequestMapping("/api/events")
 public class EventController {
 
