@@ -1,9 +1,17 @@
+FROM maven:3.8.5-openjdk-17 AS build
+
+WORKDIR /app
+
+COPY . .
+
+RUN mvn clean package -DskipTests
+
 FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY target/slotsswapper-backend-0.0.1-SNAPSHOT.jar /app/slotsswapper-backend-0.0.1-SNAPSHOT.jar
+COPY --from=build /app/target/slotsswapper-backend-0.0.1-SNAPSHOT.jar /app/app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","slotsswapper-backend-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/app.jar"]
